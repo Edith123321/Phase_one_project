@@ -1,0 +1,115 @@
+{
+    "furniture": [
+      {
+        "id": 1,
+        "name": "Classic Sofa",
+        "image": "assets/images/classic_sofa.jpg",
+        "colors": ["#000000", "#8B4513", "#C0C0C0"],
+        "dimensions": [
+          { "size": "Small", "price": 300 },
+          { "size": "Medium", "price": 400 },
+          { "size": "Large", "price": 500 }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Modern Recliner",
+        "image": "assets/images/modern_recliner.jpg",
+        "colors": ["#2F4F4F", "#D2B48C", "#696969"],
+        "dimensions": [
+          { "size": "Small", "price": 350 },
+          { "size": "Medium", "price": 450 },
+          { "size": "Large", "price": 600 }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Vintage Armchair",
+        "image": "assets/images/vintage_armchair.jpg",
+        "colors": ["#8B0000", "#556B2F", "#808080"],
+        "dimensions": [
+          { "size": "Small", "price": 200 },
+          { "size": "Medium", "price": 300 },
+          { "size": "Large", "price": 400 }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Wooden Dining Table",
+        "image": "assets/images/wooden_table.jpg",
+        "colors": ["#A52A2A", "#DEB887", "#F5DEB3"],
+        "dimensions": [
+          { "size": "4-seater", "price": 500 },
+          { "size": "6-seater", "price": 700 },
+          { "size": "8-seater", "price": 900 }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Glass Coffee Table",
+        "image": "assets/images/glass_coffee_table.jpg",
+        "colors": ["#DCDCDC", "#FFFFFF", "#808080"],
+        "dimensions": [
+          { "size": "Small", "price": 150 },
+          { "size": "Medium", "price": 250 },
+          { "size": "Large", "price": 350 }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Queen Bed Frame",
+        "image": "assets/images/queen_bed.jpg",
+        "colors": ["#4B0082", "#483D8B", "#8A2BE2"],
+        "dimensions": [
+          { "size": "Standard", "price": 700 },
+          { "size": "Deluxe", "price": 900 },
+          { "size": "Premium", "price": 1200 }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Leather Sofa Set",
+        "image": "assets/images/leather_sofa.jpg",
+        "colors": ["#8B4513", "#A0522D", "#CD853F"],
+        "dimensions": [
+          { "size": "2-seater", "price": 800 },
+          { "size": "3-seater", "price": 1000 },
+          { "size": "4-seater", "price": 1200 }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Bookshelf",
+        "image": "assets/images/bookshelf.jpg",
+        "colors": ["#8B4513", "#A9A9A9", "#696969"],
+        "dimensions": [
+          { "size": "Small", "price": 100 },
+          { "size": "Medium", "price": 200 },
+          { "size": "Large", "price": 300 }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Ergonomic Office Chair",
+        "image": "assets/images/office_chair.jpg",
+        "colors": ["#000000", "#1E90FF", "#708090"],
+        "dimensions": [
+          { "size": "Standard", "price": 250 },
+          { "size": "Deluxe", "price": 350 },
+          { "size": "Executive", "price": 450 }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Outdoor Patio Set",
+        "image": "assets/images/patio_set.jpg",
+        "colors": ["#556B2F", "#8FBC8F", "#2E8B57"],
+        "dimensions": [
+          { "size": "4-piece", "price": 600 },
+          { "size": "6-piece", "price": 800 },
+          { "size": "8-piece", "price": 1000 }
+        ]
+      }
+    ]
+  }
+  
