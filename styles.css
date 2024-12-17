@@ -1,0 +1,156 @@
+*{
+    font-family: "Nunito", sans-serif;
+
+}
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 50px
+}
+.headerContainer .logo {
+    margin-top: 0
+}
+
+.listProduct .item img{
+    width: 100%;
+    filter: drop-shadow(0 50px 20px #0009);
+      
+}
+.listProduct {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item {
+    background-color: #eeeee6;
+    padding: 0px;
+    margin: 20px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.listProduct h1{
+    font-weight: 600;
+    font-size: larger;
+    
+}
+.listProduct .item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.listProduct .item h2{
+    font-weight: 600;
+    font-size: larger;
+    text-align: center;
+}
+.listProduct .item .dimensions {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.listProduct .item .dimensions button {
+    background-color: black;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.listProduct .item .dimensions button:hover{
+    background-color: burlywood;
+    color: black;
+    
+}
+.listProduct .item .price{
+    text-align: center;
+    font-weight: 500;
+}
+
+.listProduct .item button {
+    background-color: black;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+
+.listProduct .item button:hover{
+    background-color: burlywood;
+    color: black;
+    
+}
+
+.cartTab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+
+}
+.cartTab h1 {
+    padding: 20px;
+    font-weight: 500;
+    margin: 0;
+
+}
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.cartTab .btn button {
+    background-color: yellow;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+
+}
+.cartTab .btn button:hover{
+    background-color: #eee;
+    color: black;
+}
+.cartTab .listCart .item img {
+    width: 100%;
+    border-radius: 50px;
+
+}
+
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #555;
+    background-color: #eee;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2) {
+    background-color:transparent ;
+    color: #eee;
+    cursor: none;
+}
+.listCart .item:nth-child(even){
+    background-color: #353439;
+}
+.listCart {
+    overflow: auto;
+}
+.listCart ::-webkit-scrollbar{
+    width: 0;
+}
