@@ -1,5 +1,4 @@
-{
-    "furniture": [
+[
       {
         "id": 1,
         "name": "Classic Sofa",
@@ -109,7 +108,8 @@
           { "size": "6-piece", "price": 800 },
           { "size": "8-piece", "price": 1000 }
         ]
+    
       }
     ]
-  }
+    
   
