@@ -1,144 +1,132 @@
 const iconCart = document.querySelector('.icon-cart');
-const closeCart = document.querySelector('.close');
-const body = document.querySelector('body');
-const listProductHTML = document.querySelector('.listProduct');
-const listCartHTML = document.querySelector('.listCart')
-let iconCartSpan = document.querySelector('.icon-cart span ')
+        const closeCart = document.querySelector('.close');
+        const body = document.querySelector('body');
+        const listProductHTML = document.querySelector('.listProduct');
+        const listCartHTML = document.querySelector('.listCart');
+        let iconCartSpan = document.querySelector('.icon-cart span');
 
-let listProducts = [];
-let carts =[];
+        let listProducts = [];
+        let carts = [];
 
-// Toggle cart visibility
-iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-});
-closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-});
-
-// Render products into the HTML
-const AddDataToHtml = () => {
-    listProductHTML.innerHTML = ""; // Clear existing content
-    if (listProducts.length > 0) {
-        listProducts.forEach(product => {
-            const newProduct = document.createElement('div');
-            newProduct.classList.add('item');
-            newProduct.dataset.id = product.id;
-
-            // Default size and price (first dimension)
-            const defaultSize = product.dimensions[0];
-            const defaultPrice = defaultSize.price;
-
-            // Create product HTML
-            newProduct.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h2>${product.name}</h2>
-                <div class="dimensions">
-                    ${product.dimensions.map(dim => `
-                        <button class="size-button" data-size="${dim.size}" data-price="${dim.price}">
-                            ${dim.size}
-                        </button>
-                    `).join('')}
-                </div>
-                <div class="price">Kes ${defaultPrice}</div>
-                <button class="addCart" style="margin: 20px 100px;">
-                    Add to cart
-                </button>
-            `;
-            listProductHTML.appendChild(newProduct);
+        // Toggle cart visibility
+        iconCart.addEventListener('click', () => {
+            body.classList.toggle('showCart');
         });
-    }
-};
+        closeCart.addEventListener('click', () => {
+            body.classList.remove('showCart');
+        });
 
-// Handle Add to Cart and Size Selection
-listProductHTML.addEventListener('click', (event) => {
-    const clickedElement = event.target;
+        // Render products into the HTML
+        const AddDataToHtml = (productList = listProducts) => {
+            listProductHTML.innerHTML = ""; // Clear existing content
+            productList.forEach(product => {
+                const newProduct = document.createElement('div');
+                newProduct.classList.add('item');
+                newProduct.dataset.id = product.id;
 
-    // Handle size selection
-    if (clickedElement.classList.contains('size-button')) {
-        const parentItem = clickedElement.closest('.item');
-        const priceDiv = parentItem.querySelector('.price');
-        const selectedPrice = clickedElement.dataset.price;
+                // Default size and price (first dimension)
+                const defaultSize = product.dimensions[0];
+                const defaultPrice = defaultSize.price;
 
-        // Update price based on selected size
-        priceDiv.textContent = `Kes ${selectedPrice}`;
-    }
+                // Create product HTML
+                newProduct.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <div class="dimensions">
+                        ${product.dimensions.map(dim => `
+                            <button class="size-button" data-size="${dim.size}" data-price="${dim.price}">
+                                ${dim.size}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="price">Kes ${defaultPrice}</div>
+                    <button class="addCart">Add to cart</button>
+                `;
+                listProductHTML.appendChild(newProduct);
+            });
+        };
 
-    // Handle Add to Cart button click
-    if (clickedElement.classList.contains('addCart')) {
-        let product_id = clickedElement.parentElement.dataset.id;
-        addToCart(product_id);
+        // Handle Add to Cart and Size Selection
+        listProductHTML.addEventListener('click', (event) => {
+            const clickedElement = event.target;
 
-        // Find the product
-        const product = listProducts.find(item => item.id == productId);
-        if (product) {
-            const selectedSize = parentItem.querySelector('.dimensions .size-button[data-price]').dataset.size || product.dimensions[0].size;
-            const selectedPrice = parentItem.querySelector('.price').textContent.replace('Kes ', '');
-            console.log(`Added to cart: ${product.name}, Size: ${selectedSize}, Price: Kes ${selectedPrice}`);
-            // Add logic to manage the cart here
-        }
-    }
-});
-const addToCart = (product_id)=>{
-    if(carts.length <= 0){
+            // Handle size selection
+            if (clickedElement.classList.contains('size-button')) {
+                const parentItem = clickedElement.closest('.item');
+                const priceDiv = parentItem.querySelector('.price');
+                const selectedPrice = clickedElement.dataset.price;
 
-    }
-}
+                // Update price based on selected size
+                priceDiv.textContent = `Kes ${selectedPrice}`;
+            }
 
-function handleSearch() {
-    const searchBar = document.querySelector(".search-bar");
-    const searchButton = document.querySelector(".search-button");
+            // Handle Add to Cart button click
+            if (clickedElement.classList.contains('addCart')) {
+                const parentItem = clickedElement.closest('.item');
+                const productId = parentItem.dataset.id;
+                addToCart(productId);
+            }
+        });
 
+        const addToCart = (product_id) => {
+            const product = listProducts.find(item => item.id == product_id);
+            if (product) {
+                carts.push(product);
+                updateCartDisplay();
+                console.log("Cart updated:", carts);
+            } else {
+                console.error("Product not found for ID:", product_id);
+            }
+        };
 
-    searchButton.addEventListener("click", () => {
-        const query = searchBar.value.toLowerCase();
-        document.querySelector(".listProduct").innerHTML = ""; // Clear previous results
+        const updateCartDisplay = () => {
+            listCartHTML.innerHTML = ""; // Clear previous cart content
+            carts.forEach(cartItem => {
+                const cartElement = document.createElement('div');
+                cartElement.textContent = `${cartItem.name} - Kes ${cartItem.dimensions[0].price}`;
+                listCartHTML.appendChild(cartElement);
+            });
+            iconCartSpan.textContent = carts.length; // Update cart count
+        };
 
+        // Search functionality
+        function handleSearch() {
+            const searchBar = document.querySelector(".search-bar");
+            const searchButton = document.querySelector(".search-button");
 
-        fetch('http://localhost:3000/furniture')
-            .then((response) => response.json())
-            .then((films) => {
-                const filteredFurniture = product.filter((furniture) =>
+            searchButton.addEventListener("click", () => {
+                const query = searchBar.value.toLowerCase();
+                const filteredProducts = listProducts.filter(product =>
                     product.name.toLowerCase().includes(query)
                 );
 
-
-                if (filteredFurniture.length === 0) {
-                    document.querySelector("#container").innerHTML = `
-                        <p style="text-align: center; color: gray;">No films found matching "${query}"</p>`;
+                if (filteredProducts.length === 0) {
+                    listProductHTML.innerHTML = `<p style="text-align: center; color: gray;">No products found matching "${query}"</p>`;
                 } else {
-                    filteredFurniture.forEach((data) => AddDataToHtml(product));
+                    AddDataToHtml(filteredProducts);
                 }
-            })
-            .catch((error) => {
-                console.error("Error fetching films:", error);
-                alert("An error occurred while searching.");
             });
-    });
-}
+        }
 
-// Fetch product data and initialize the application
-const initApp = () => {
-    fetch('http://localhost:3000/furniture')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            listProducts = data;
-            console.log("Fetched products:", listProducts);
-            AddDataToHtml();
-        })
-        .catch(error => {
-            console.error("Error fetching product data:", error);
-        });
-};
+        // Fetch product data and initialize the application
+        const initApp = () => {
+            fetch('http://localhost:3000/furniture')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    listProducts = data;
+                    AddDataToHtml();
+                    handleSearch();
+                })
+                .catch(error => {
+                    console.error("Error fetching product data:", error);
+                });
+        };
 
-// Initialize the app
-initApp();
-function initialize(){
-    handleSearch()
-}
-
+        // Initialize the app
+        initApp();
+    

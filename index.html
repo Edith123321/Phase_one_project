@@ -8,19 +8,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+        header {
+          background-image: url('https://www.alankaram.in/wp-content/uploads/2023/08/Wooden-Furniture-For-Sustainable-Living.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: top;
+      }
+  </style>
 </head>
 <body class="show">
+    <!-- Header Section -->
     <header class="banner">
         <nav class="headerContainer">
+            <!-- Logo -->
             <div class="logo">
                 <h1>GithinjiWoods <span>.</span></h1>
             </div>
+
+            <!-- Search Form -->
             <div class="form">
-                <form action="" id="form">
+                <form id="form">
                     <input type="text" placeholder="Search Furniture" aria-label="Search" class="search-bar">
                     <button type="submit" aria-label="Search for furniture" class="search-button">Search</button>
                 </form>
             </div>
+
+            <!-- Navigation Menu -->
             <div class="navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -28,6 +42,8 @@
                     <li><a href="#contacts">Contacts</a></li>
                 </ul>
             </div>
+
+            <!-- Cart Icon -->
             <div class="icon-cart" id="cartIcon">
                 <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
@@ -35,52 +51,60 @@
                 <span class="span">0</span>
             </div>
         </nav>
+
+        <!-- Header Content -->
         <div class="content">
             <h1>TIMELESS FURNITURE PIECES</h1>
             <p>Discover furniture that combines elegance and functionality for every space in your home.</p>
         </div>
     </header>
-    
+
+    <!-- Furniture Collection Section -->
+    <section id="collection">
         <h1 style="text-align: center; margin-bottom: 30px;">Furniture Collection</h1>
+        <div id="furnitureContainer" class="listProduct">
+            <!-- Example Product -->
+            <div class="item">
+                <img src="assets/images/classic_sofa.jpg" alt="Classic Sofa">
+                <h2>Classic Sofa</h2>
+                <div class="dimensions">
+                    <button>Small</button>
+                    <button>Medium</button>
+                    <button>Large</button>
+                </div>
+                <div class="price">Kes 45000</div>
+                <button class="addCart" style="margin: 20px 100px;">Add to Cart</button>
+            </div>
+            <!-- More products will be dynamically loaded here -->
+        </div>
+    </section>
 
-
-        <div id="furnitureContainer"  class="listProduct">
-                <div class="item">
-                    <img src="assets/images/classic_sofa.jpg" alt="">
-                    <h2>Classic sofa</h2>
-                    <div class="dimensions">
-                        <button>small</button>
-                        <button>medium</button>
-                        <button>large</button>
-                    </div>
-                    <div class="price">Kes 45000</div>
-                    <button class="addCart" style="margin: 20px 100px;">
-                        Add to cart
-                    </button>
-                    
-            <!-- Products will be dynamically loaded here -->
-        
-    </div>
+    <!-- Cart Section -->
     <div class="cartTab" id="cartTab">
         <h1>Shopping Cart</h1>
         <div class="listCart">
+            <!-- Example Cart Item -->
             <div class="item">
                 <div class="image">
-                    <img src="assets/images/classic_sofa.jpg" alt="">
+                    <img src="assets/images/classic_sofa.jpg" alt="Classic Sofa">
                 </div>
-
             </div>
-            <!-- Cart items will be dynamically loaded here -->
-
+            <!-- More cart items will be dynamically loaded here -->
         </div>
+
+        <!-- Cart Buttons -->
         <div class="btn">
-            <button class="close" id="closeCart">CLOSE</button>
-            <button class="checkOut">CHECKOUT</button>
+            <button class="close" id="closeCart">Close</button>
+            <button class="checkOut">Checkout</button>
         </div>
     </div>
+
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 GithinjiWoods. All rights reserved.</p>
     </footer>
+
+    <!-- External JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
