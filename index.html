@@ -10,11 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
         header {
-          background-image: url('https://www.alankaram.in/wp-content/uploads/2023/08/Wooden-Furniture-For-Sustainable-Living.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top;
+          background-image:url('https://www.alankaram.in/wp-content/uploads/2023/08/Wooden-Furniture-For-Sustainable-Living.jpg');
+          
+
+         /* Full height */
+         height: 100%;
+
+        /* Center and scale the image nicely */
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
       }
+      .content {
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+          color: white;
+          font-weight: bold;
+          border: 3px solid #f1f1f1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          width: 80%;
+          padding: 20px;
+          text-align: center;
+     }
   </style>
 </head>
 <body class="show">
@@ -56,12 +77,15 @@
         <div class="content">
             <h1>TIMELESS FURNITURE PIECES</h1>
             <p>Discover furniture that combines elegance and functionality for every space in your home.</p>
+            <div>
+                <button style="margin: 20px;">Shop Now</button>
+            </div>
         </div>
     </header>
 
     <!-- Furniture Collection Section -->
     <section id="collection">
-        <h1 style="text-align: center; margin-bottom: 30px;">Furniture Collection</h1>
+        <h1 style="text-align: center; margin-bottom: 30px; font-size: larger;">Furniture Collection</h1>
         <div id="furnitureContainer" class="listProduct">
             <!-- Example Product -->
             <div class="item">
