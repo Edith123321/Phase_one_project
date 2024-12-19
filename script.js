@@ -116,7 +116,6 @@ function handleSearch() {
             });
     });
 }
-
 // Fetch product data and initialize the application
 const initApp = () => {
     fetch('http://localhost:3000/furniture')
