@@ -79,3 +79,34 @@
 .navigation ul li a:hover {
     color: blueviolet; /* Change color on hover */
 }
+/* Cart Icon */
+.icon-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.icon-cart svg {
+    width: 24px;
+    height: 24px;
+    color: #333;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.icon-cart:hover svg {
+    color: blueviolet; /* Change color on hover */
+}
+
+.icon-cart .span {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
