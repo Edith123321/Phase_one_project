@@ -62,3 +62,20 @@
 .form button:hover {
     background-color: #333; /* Darker background on hover */
 }
+
+/* Navigation Links */
+.navigation ul {
+    display: flex;
+    gap: 20px; /* Space between links */
+    list-style: none; /* Remove bullet points */
+}
+
+.navigation ul li a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.navigation ul li a:hover {
+    color: blueviolet; /* Change color on hover */
+}
