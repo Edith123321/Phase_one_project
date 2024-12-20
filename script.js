@@ -120,3 +120,32 @@ const updateCartDisplay = () => {
     });
     iconCartSpan.textContent = carts.length; // Update cart item count
 };
+
+// Handle quantity changes
+listCartHTML.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+    if (clickedElement.classList.contains('plus') || clickedElement.classList.contains('minus')) {
+        const productId = clickedElement.dataset.id;
+        const size = clickedElement.dataset.size;
+        const cartItem = carts.find(cart => cart.id === productId && cart.selectedSize === size);
+
+
+        if (cartItem) {
+            if (clickedElement.classList.contains('plus')) {
+                cartItem.quantity += 1;
+            } else if (clickedElement.classList.contains('minus')) {
+                if (cartItem.quantity > 1) {
+                    cartItem.quantity -= 1;
+                } else {
+                    // Remove item from cart if quantity is 1 and minus button is clicked
+                    const cartItemIndex = carts.findIndex(cart => cart.id === productId && cart.selectedSize === size);
+                    carts.splice(cartItemIndex, 1);
+                }
+            }
+        }
+
+
+        updateCartDisplay();
+    }
+});
+
