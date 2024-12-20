@@ -96,3 +96,27 @@ const addToCart = (productId, selectedPrice, selectedSize) => {
         console.error("Product not found for ID:", productId);
     }
 };
+
+// Update cart display
+const updateCartDisplay = () => {
+    listCartHTML.innerHTML = ""; // Clear existing cart content
+    carts.forEach(cartItem => {
+        const cartElement = document.createElement('div');
+        cartElement.classList.add('item');
+        cartElement.innerHTML = `
+            <div class="image">
+                <img src="${cartItem.image}" alt="${cartItem.name}">
+            </div>
+            <h4>${cartItem.name}</h4>
+            <div>Kes ${cartItem.selectedPrice}</div>
+            <div>Size: ${cartItem.selectedSize}</div>
+            <div class="quantity" style="display: flex; justify-content: center; align-items: center;">
+                <span class="minus" data-id="${cartItem.id}" data-size="${cartItem.selectedSize}">-</span>
+                <span class="quantity-value">${cartItem.quantity}</span>
+                <span class="plus" data-id="${cartItem.id}" data-size="${cartItem.selectedSize}">+</span>
+            </div>
+        `;
+        listCartHTML.appendChild(cartElement);
+    });
+    iconCartSpan.textContent = carts.length; // Update cart item count
+};
