@@ -354,3 +354,17 @@ body.showCart .container {
 
 
 }
+.footer ul li a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+.footer ul li{
+    list-style: none;
+}
+.footer ul li a{
+    color: #000;
+}
+.footer ul li a:hover{
+    color: #eee;
+}
