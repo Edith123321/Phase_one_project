@@ -190,6 +190,9 @@ const initApp = () => {
         });
 };
 
+// Initialize the app
+initApp();
+
 
 
 
