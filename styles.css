@@ -1,0 +1,19 @@
+/* Global Styles */
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Header Container */
+.headerContainer {
+    display: flex;
+    justify-content: space-between; /* Space between logo, form, and navigation */
+    align-items: center;
+    padding: 10px 50px;
+    position: sticky; /* Sticks header at the top on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures header is above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
