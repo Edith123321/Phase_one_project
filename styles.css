@@ -17,3 +17,20 @@
     z-index: 1000; /* Ensures header is above other content */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+/* Logo Styling */
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Collection Heading */
+#collection h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo h1 span {
+    color: blueviolet; /* Color of dot in logo */
+}
