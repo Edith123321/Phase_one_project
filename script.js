@@ -149,3 +149,28 @@ listCartHTML.addEventListener('click', (event) => {
     }
 });
 
+// Search functionality
+const handleSearch = () => {
+    const searchBar = document.querySelector(".search-bar");
+    const searchButton = document.querySelector(".search-button");
+
+
+    searchButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent form submission
+        const query = searchBar.value.toLowerCase();
+        const filteredProducts = listProducts.filter(product =>
+            product.name.toLowerCase().includes(query)
+        );
+
+
+        if (filteredProducts.length === 0) {
+            listProductHTML.innerHTML = `<p style="text-align: center; color: gray;">No products found matching "${query}"</p>`;
+        } else {
+            renderProducts(filteredProducts);
+        }
+    });
+};
+
+
+
+
