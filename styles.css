@@ -195,3 +195,123 @@
     background-color: burlywood; /* Change color on hover */
     color: black;
 }
+/* Cart Tab */
+body.showCart .cartTab {
+    inset: 0 0 0 auto;
+    display: block;
+}
+
+body.showCart .container {
+    transform: translateX(-250px);
+    display: none;
+}
+
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: flex;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s ease-out; /* Smooth transition */
+    justify-content: space-between;
+}
+
+.cartTab .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cartTab .image img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.cartTab .item h2, .cartTab .item div {
+    flex: 1;
+    text-align: center;
+}
+
+.cartTab .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartTab .quantity .minus, .cartTab .quantity .plus {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.cartTab .quantity .quantity-value {
+    margin: 0 10px;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+}
+
+.cartTab .btn button {
+    background-color: yellow;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%;
+    height: 60px;
+}
+
+.cartTab .btn {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cartTab .btn button:hover {
+    background-color: #eee; /* Change color on hover */
+    color: black;
+}
+
+.cartTab .listCart {
+    overflow: auto;
+}
+
+.cartTab .listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.cartTab .listCart .item img {
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* Quantity Control Styling */
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee1ee;
+}
