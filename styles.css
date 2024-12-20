@@ -140,3 +140,58 @@
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
+.listProduct .item img {
+    width: 100%;
+    max-height: 300px;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct .item:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.listProduct h1, .listProduct .item h2 {
+    font-weight: 600;
+    font-size: larger;
+}
+
+.listProduct .item .dimensions {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.listProduct .item .dimensions button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.listProduct .item .dimensions button:hover {
+    background-color: burlywood; /* Change color on hover */
+    color: black;
+}
+
+.listProduct .item .price {
+    font-weight: 500;
+}
+
+.listProduct .item button {
+    background-color: black;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 10px auto 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.listProduct .item button:hover {
+    background-color: burlywood; /* Change color on hover */
+    color: black;
+}
