@@ -171,6 +171,26 @@ const handleSearch = () => {
     });
 };
 
+// Fetch product data and initialize the application
+const initApp = () => {
+    fetch('furniture.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            listProducts = data;
+            renderProducts();
+            handleSearch();
+        })
+        .catch(error => {
+            console.error("Error fetching product data:", error);
+        });
+};
+
+
 
 
 
