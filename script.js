@@ -9,3 +9,11 @@ let iconCartSpan = document.querySelector('.icon-cart span');
 // Adding items to an array
 let listProducts = [];
 let carts = [];
+
+// Toggle cart visibility
+iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+});
+closeCart.addEventListener('click', () => {
+    body.classList.remove('showCart');
+});
