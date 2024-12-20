@@ -1,0 +1,174 @@
+GithinjiWoods.
+Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase One Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+        /* Header background image and styles */
+        header {
+            background-image: url('https://www.alankaram.in/wp-content/uploads/2023/08/Wooden-Furniture-For-Sustainable-Living.jpg');
+            height: 100%; /* Full height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* No repeat */
+            background-size: cover; /* Cover the entire header */
+            margin-bottom: 20px;
+        }
+
+        /* Content overlay styles */
+        .content {
+            background-color: rgba(0,0,0, 0.4); /* Black with opacity */
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="show">
+    <!-- Header Section -->
+    <header class="banner">
+        <nav class="headerContainer">
+            <!-- Logo -->
+            <div class="logo">
+                <h1>GithinjiWoods <span>.</span></h1>
+            </div>
+
+            <!-- Search Form -->
+            <div class="form">
+                <form id="form">
+                    <input type="text" placeholder="Search Furniture" aria-label="Search" class="search-bar">
+                    <button type="submit" aria-label="Search for furniture" class="search-button">Search</button>
+                </form>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </div>
+
+            <!-- Cart Icon -->
+            <div class="icon-cart" id="cartIcon">
+                <svg class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                <span class="span">0</span>
+            </div>
+        </nav>
+
+        <!-- Header Content -->
+        <div class="content">
+            <h1>TIMELESS FURNITURE PIECES</h1>
+            <p>Discover furniture that combines elegance and functionality for every space in your home.</p>
+            <div>
+                <button style="margin: 20px; padding: 10px; border-radius: 5px; border: none; background-color: black; cursor: pointer;">
+                    <a href="#collection" style="color: #eee;">Shop Now</a>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Furniture Collection Section -->
+    <section id="collection">
+        <h1 style="text-align: center; margin: 60px; font-size: larger;">Furniture Collection</h1>
+        <div id="furnitureContainer" class="listProduct">
+            <!-- Example Product -->
+            <div class="item">
+                <img src="assets/images/classic_sofa.jpg" alt="Classic Sofa">
+                <h2>Classic Sofa</h2>
+                <div class="dimensions">
+                    <button>Small</button>
+                    <button>Medium</button>
+                    <button>Large</button>
+                </div>
+                <div class="price">Kes 45000</div>
+                <button class="addCart" style="margin: 20px 100px;">Add to Cart</button>
+            </div>
+            <!-- More products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div class="cartTab" id="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            <!-- Example Cart Item -->
+            <div class="item">
+                <div class="image">
+                    <img src="assets/images/classic_sofa.jpg" alt="Classic Sofa">
+                </div>
+                <h2>classic Sofa</h2>
+                <div>Kes 2500</div>
+                <div class="quantity" style="display: flex;">
+                    <span class="minus"><</span>
+                    <span class="quantity-value">0</span>
+                    <span class="plus"><</span>
+                </div>
+            </div>
+            <!-- More cart items will be dynamically loaded here -->
+        </div>
+    
+        <!-- Cart Buttons -->
+        <div class="btn">
+            <button class="close" id="closeCart">Close</button>
+            <button class="checkOut">Checkout</button>
+        </div>
+    </div>
+    
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="footer-section">
+                <h2>Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <ul class="social-media">
+                    <li><a href="#facebook" aria-label="Facebook"><img src="assets/icons/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#twitter" aria-label="Twitter"><img src="assets/icons/twitter.png" alt="Twitter"></a></li>
+                    <li><a href="#instagram" aria-label="Instagram"><img src="assets/icons/instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GithinjiWoods. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
