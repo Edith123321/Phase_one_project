@@ -47,3 +47,35 @@ const renderProducts = (productList = listProducts) => {
         listProductHTML.appendChild(productElement);
     });
 };
+
+// Handle Add to Cart and Size Selection
+listProductHTML.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+
+
+    if (clickedElement.classList.contains('size-button')) {
+        const parentItem = clickedElement.closest('.item');
+        const priceDiv = parentItem.querySelector('.price');
+        const selectedPrice = clickedElement.dataset.price;
+
+
+        // Update price based on selected size
+        priceDiv.textContent = `Kes ${selectedPrice}`;
+        parentItem.dataset.selectedPrice = selectedPrice;
+        parentItem.dataset.selectedSize = clickedElement.dataset.size;
+    }
+
+
+    if (clickedElement.classList.contains('addCart')) {
+        const parentItem = clickedElement.closest('.item');
+        const productId = parentItem.dataset.id;
+
+
+        // Use stored or default values for price and size
+        const selectedPrice = parentItem.dataset.selectedPrice || parentItem.querySelector('.price').textContent.replace('Kes ', '');
+        const selectedSize = parentItem.dataset.selectedSize || 'default';
+
+
+        addToCart(productId, selectedPrice, selectedSize);
+    }
+});
