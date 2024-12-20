@@ -6,4 +6,6 @@ const listProductHTML = document.querySelector('.listProduct');
 const listCartHTML = document.querySelector('.listCart');
 let iconCartSpan = document.querySelector('.icon-cart span');
 
-
+// Adding items to an array
+let listProducts = [];
+let carts = [];
