@@ -79,3 +79,20 @@ listProductHTML.addEventListener('click', (event) => {
         addToCart(productId, selectedPrice, selectedSize);
     }
 });
+
+// Add product to cart
+const addToCart = (productId, selectedPrice, selectedSize) => {
+    const product = listProducts.find(item => item.id == productId);
+    if (product) {
+        const existingCartItem = carts.find(cart => cart.id === productId && cart.selectedSize === selectedSize);
+        if (existingCartItem) {
+            existingCartItem.quantity += 1;
+        } else {
+            const productToAdd = { ...product, selectedPrice, selectedSize, quantity: 1 };
+            carts.push(productToAdd);
+        }
+        updateCartDisplay();
+    } else {
+        console.error("Product not found for ID:", productId);
+    }
+};
